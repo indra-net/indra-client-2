@@ -1,15 +1,15 @@
-var http= require('http')
+var http = require('http')
   , shoe = require('shoe')
   , spawn = require('child_process').spawn
+  , es = require('event-stream')
   , mindwaveClientPath = __dirname + '/lib/mindwave-client.js'
+  , ecstatic = require('ecstatic')(__dirname + '/public')
+  , server = http.createServer(ecstatic)
 
-var ecstatic = require('ecstatic')(__dirname + '/public');
-var server = http.createServer(ecstatic);
 server.listen(8000)
 
 // spawn node mindwaveCleintPath
 var c = spawn('node', [mindwaveClientPath])
-c.stdout
 
 var sock = shoe(function (stream) {
   c.stdout.pipe(stream)
