@@ -7,10 +7,10 @@ var shoe = require('shoe')
   , loop = main({ spectrum: []}, render, require('virtual-dom'))
   , _ = require('lodash')
 
-//function smap (fn) {
-//  return es.mapSync(fn)
-//}
-//
+function smap (fn) {
+  return es.mapSync(fn)
+}
+
 //function alphaBandpass (s) {
 //  return _.slice(s,6,13)
 //}
